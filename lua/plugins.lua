@@ -10,7 +10,10 @@ end
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use { "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" }
+  use "lukas-reineke/indent-blankline.nvim"
   use { "akinsho/toggleterm.nvim" }
+  use "CopilotC-Nvim/CopilotChat.nvim"
+  use "norcalli/nvim-colorizer.lua"
   use "weirongxu/plantuml-previewer.vim"
   use "tyru/open-browser.vim"
   use "wuelnerdotexe/vim-astro"
@@ -44,7 +47,6 @@ return require("packer").startup(function(use)
   use "hrsh7th/vim-vsnip-integ"
   use "tpope/vim-commentary"
   use "alvan/vim-closetag"
-  use "Yggdroot/indentLine"
   use { "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = true } }
   -- use "vim-airline/vim-airline"
   -- use "vim-airline/vim-airline-themes"

@@ -14,11 +14,10 @@ vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(copilot-previous)', {})
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true, silent = true })
 
 -- CurlVim
-vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("config.curlvim").detect_flask_route()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("config.curlvim").detect_route()<cr>', { noremap = true, silent = true })
 
 -- Toggle NvimTree
 vim.api.nvim_set_keymap('n', '<F2>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-r>', ':NvimTreeRefresh<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F3>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 
 -- Prettier Conf
@@ -40,6 +39,13 @@ vim.g.user_emmet_settings = {
     extends = 'jsx'
   }
 }
+
+-- Colorizer Conf
+vim.api.nvim_set_keymap('n', '<leader>hc', ':ColorizerToggle<CR>', { noremap = true, silent = true })
+
+-- CopilotChat Conf
+vim.api.nvim_set_keymap('n', '<leader>pc', ':CopilotChatToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>pe', ':CopilotChatExplain<CR>', { noremap = true, silent = true })
 
 -- Window split and navigation Conf
 -- Split window vertically
