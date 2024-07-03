@@ -9,6 +9,8 @@ end
 
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
+  use { "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" }
+  use { "akinsho/toggleterm.nvim" }
   use "weirongxu/plantuml-previewer.vim"
   use "tyru/open-browser.vim"
   use "wuelnerdotexe/vim-astro"

@@ -1,10 +1,7 @@
+_G.vim = vim
 -- ~/.config/nvim/init.lua
-
--- set space as leader key
-vim.g.mapleader = ' '
-
 -- Load plugin settings
-require('config.settings')
+require('settings')
 
 -- Basic Configuration
 vim.opt.signcolumn = "no"
@@ -32,11 +29,6 @@ _G.MyClock = function()
   return _G.MyUsername() .. ' hoy es ' .. date_time
 end
 
--- Set Airline theme and configurations
-vim.g.airline_theme = 'wombat'
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_extensions = { tabline = { enabled = 1 } }
-vim.g.airline_section_x = '%{v:lua.MyClock()}'
 
 -- Blade Configuration
 vim.g.blade_custom_directives = { 'datetime', 'javascript' }
@@ -51,15 +43,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Theme Configuration
 vim.opt.termguicolors = true
-vim.cmd([[
-  augroup user_colors
-    autocmd!
-    autocmd ColorScheme * highlight Normal guibg=none
-    autocmd ColorScheme * highlight SignColumn guibg=none
-    autocmd ColorScheme * highlight StatusLine guibg=none
-  augroup END
-]])
-
 -- Closetag Configuration
 vim.g.closetag_filenames = '*.html,*.xhtml,*.phtml'
 vim.g.closetag_xhtml_filenames = '*.xhtml,*.jsx'
@@ -79,6 +62,9 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     vim.opt_local.spell = true
-    vim.opt_local.spelllang = "es"
+    -- add es, and en to spelllang
+    vim.opt_local.spelllang = "es,en"
+    -- set colorscheme 
+    vim.cmd("colorscheme vim")
   end
 })

@@ -1,5 +1,6 @@
 " Define highlight groups for active and inactive windows
 highlight InactiveWindow guibg=#3c3c3c
+
 " Set window highlight options, 
 autocmd WinEnter * setlocal winhighlight=Normal:None
 autocmd WinLeave * setlocal winhighlight=Normal:InactiveWindow

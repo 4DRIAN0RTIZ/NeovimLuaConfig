@@ -1,23 +1,25 @@
+vim.g.mapleader = ' '
+
 -- CONFIGURATION KEYMAPS
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-w>', ':q<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-p>', ':bnext<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-o>', ':bprevious<CR>', { noremap = true })
 
+-- Copilot.vim Conf
+vim.api.nvim_set_keymap('i', '<C-k>', '<Plug>(copilot-next)', {})
+vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(copilot-previous)', {})
+
 -- Telescope live grep
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true, silent = true })
 
--- Flask_curl
-vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("flask_curl").detect_flask_route()<cr>', { noremap = true, silent = true })
+-- CurlVim
+vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("config.curlvim").detect_flask_route()<cr>', { noremap = true, silent = true })
 
 -- Toggle NvimTree
 vim.api.nvim_set_keymap('n', '<F2>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-r>', ':NvimTreeRefresh<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F3>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
-
--- Copilot.vim next and previous
-vim.api.nvim_set_keymap('i', '<C-k>', '<Plug>(copilot-next)', {})
-vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(copilot-previous)', {})
 
 -- Prettier Conf
 vim.api.nvim_create_user_command('Prettier', 'CocCommand prettier.forceFormatDocument', {})
