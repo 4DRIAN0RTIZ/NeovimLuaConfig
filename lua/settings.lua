@@ -19,6 +19,7 @@ require('config.toggleterm')
 require('config.indentline')
 require('config.colorizer')
 require('config.copilot_chat')
+require('config.diffview')
 -- Load keymaps
 require('keymaps')
 require('cocconfig')

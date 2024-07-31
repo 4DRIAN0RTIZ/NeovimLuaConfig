@@ -52,4 +52,5 @@ return require("packer").startup(function(use)
   -- use "vim-airline/vim-airline-themes"
   use "nvim-tree/nvim-tree.lua"
   use "othree/html5.vim"
+  use "sindrets/diffview.nvim"
 end)

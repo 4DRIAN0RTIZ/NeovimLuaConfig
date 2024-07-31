@@ -68,3 +68,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.cmd("colorscheme vim")
   end
 })
+
+-- Set colorcolum in commit messages
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt_local.colorcolumn = "79"
+  end
+})

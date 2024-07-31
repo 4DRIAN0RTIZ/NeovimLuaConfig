@@ -43,9 +43,17 @@ vim.g.user_emmet_settings = {
 -- Colorizer Conf
 vim.api.nvim_set_keymap('n', '<leader>hc', ':ColorizerToggle<CR>', { noremap = true, silent = true })
 
+-- Diffview Conf
+-- Open Diffview
+vim.api.nvim_set_keymap('n', ';df', ':DiffviewOpen<CR>', { noremap = true, silent = true })
+-- Toggle Diffview
+vim.api.nvim_set_keymap('n', ';dt', ':DiffviewToggleFiles<CR>', { noremap = true, silent = true })
+-- Refresh Diffview
+vim.api.nvim_set_keymap('n', ';dr', ':DiffviewRefresh<CR>', { noremap = true, silent = true })
+
 -- CopilotChat Conf
-vim.api.nvim_set_keymap('n', '<leader>pc', ':CopilotChatToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<leader>pe', ':CopilotChatExplain<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ';ct', ':CopilotChatToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', ';ce', ':CopilotChatExplain<CR>', { noremap = true, silent = true })
 
 -- Window split and navigation Conf
 -- Split window vertically
