@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
   use "weirongxu/plantuml-previewer.vim"
   use "tyru/open-browser.vim"
   use "wuelnerdotexe/vim-astro"
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
   use "jackMort/ChatGPT.nvim"
   use "nvim-lua/plenary.nvim"
   use "MunifTanjim/nui.nvim"
@@ -28,13 +29,20 @@ return require("packer").startup(function(use)
   use "dracula/vim"
   use { "catppuccin/nvim", as = "catppuccin" }
   use "williamboman/nvim-lsp-installer"
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
   use "neovim/nvim-lspconfig"
+  use "nvim-neotest/nvim-nio"
+  use "lewis6991/gitsigns.nvim"
   use "StanAngeloff/php.vim"
   use "folke/which-key.nvim"
   use "folke/trouble.nvim"
   use "nvim-tree/nvim-web-devicons"
   use "rcarriga/nvim-notify"
   use "folke/noice.nvim"
+  use "tpope/vim-dadbod"
+  use "kristijanhusak/vim-dadbod-ui"
+  use "kristijanhusak/vim-dadbod-completion"
   use "KabbAmine/vCoolor.vim"
   use "nvim-telescope/telescope.nvim"
   use { "nvim-telescope/telescope-live-grep-args.nvim", branch = "master" }

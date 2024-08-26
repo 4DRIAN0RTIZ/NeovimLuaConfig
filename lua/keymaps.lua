@@ -75,3 +75,35 @@ vim.api.nvim_set_keymap('n', '<C-Up>', ':resize +5<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<C-Down>', ':resize -5<CR>', { noremap = true, silent = true })
 -- Close Window
 vim.api.nvim_set_keymap('n', '<C-q>', ':close<CR>', { noremap = true, silent = true })
+
+
+-- NEOVIM DAP
+
+-- Mapeos de teclas para controlar la depuración
+vim.api.nvim_set_keymap('n', '<F5>', ':lua require"dap".continue()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F10>', ':lua require"dap".step_over()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F11>', ':lua require"dap".step_into()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F12>', ':lua require"dap".step_out()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>b', ':lua require"dap".toggle_breakpoint()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dr', ':lua require"dap".repl.open()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua require"dap".run_last()<CR>', { noremap = true, silent = true })
+
+-- Remove ^M from files
+vim.api.nvim_set_keymap('n', '<leader>rm', ':silent %s/\\r//g<CR>', { noremap = true, silent = true })
+
+-- Move lines up and down with Alt + j/k
+vim.api.nvim_set_keymap('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-j>', ':m \'>+1<CR>gv=gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-k>', ':m \'<-2<CR>gv=gv', { noremap = true, silent = true })
+
+-- Map to replace <?php echo with <?= in PHP files
+vim.api.nvim_set_keymap('n', ';cph', ':%s/<?php echo/<?=/g<CR>', { noremap = true, silent = true })
+
+-- Keymaps para gestionar notas de tickets
+vim.api.nvim_set_keymap('n', ';tn', ':lua require("config.ticket_notes").new_note()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ';tl', ':lua require("config.ticket_notes").list_notes()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ';te', ':lua require("config.ticket_notes").edit_note("<ID_DEL_TICKET>")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ';td', ':lua require("config.ticket_notes").delete_note("<ID_DEL_TICKET>")<CR>', { noremap = true, silent = true })
