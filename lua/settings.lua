@@ -24,6 +24,8 @@ require('config.gitsigns')
 require('config.dap')
 require('config.dadbod')
 require('config.ticket_notes')
+require('config.todo_comments')
+require('config.copilot')
 -- Load keymaps
 require('keymaps')
 require('cocconfig')

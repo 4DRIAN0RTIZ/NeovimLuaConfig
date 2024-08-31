@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(copilot-previous)', {})
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true, silent = true })
 
 -- CurlVim
-vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("config.curlvim").detect_route()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ';cv', '<cmd>lua require("config.curlvim").detect_route()<cr>', { noremap = true, silent = true })
 
 -- Toggle NvimTree
 vim.api.nvim_set_keymap('n', '<F2>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
@@ -107,3 +107,16 @@ vim.api.nvim_set_keymap('n', ';tn', ':lua require("config.ticket_notes").new_not
 vim.api.nvim_set_keymap('n', ';tl', ':lua require("config.ticket_notes").list_notes()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ';te', ':lua require("config.ticket_notes").edit_note("<ID_DEL_TICKET>")<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ';td', ':lua require("config.ticket_notes").delete_note("<ID_DEL_TICKET>")<CR>', { noremap = true, silent = true })
+
+-- Keymaps
+vim.api.nvim_set_keymap('n', ';ic', ':lua insert_code()<CR>', { noremap = true, silent = true }) -- Esto ingresa el $login = "hdorantes" en la línea de arriba
+vim.api.nvim_set_keymap('n', ';ec', ':%s/<?php echo/<?=/g<CR>', { noremap = true, silent = true }) -- Esto reemplaza <?php echo por <?= en todo el archivo
+vim.api.nvim_set_keymap('n', ';pr', ':lua print_r()<CR>', { noremap = true, silent = true }) -- Esto ingresa un print_r($_POST) en la línea de arriba
+vim.api.nvim_set_keymap('n', ';rpr', ':lua remove_print_r()<CR>', { noremap = true, silent = true }) -- Esto elimina el print_r($_POST) del archivo
+vim.api.nvim_set_keymap('n', ';sqle', ':lua insert_sql_echo()<CR>', { noremap = true, silent = true }) -- Esto ingresa un echo $sql; exit; en la línea de arriba
+vim.api.nvim_set_keymap('n', ';rsqle', ':lua remove_sql_echo()<CR>', { noremap = true, silent = true }) -- Esto elimina el echo $sql; exit; del archivo
+vim.api.nvim_set_keymap('n', ';qsql', ':lua sql_query()<CR>', { noremap = true, silent = true }) -- Esto hace una consulta SQL en la linea seleccionada
+vim.api.nvim_set_keymap('v', ';qsql', ':lua sql_query()<CR>', { noremap = true, silent = true }) -- Esto hace una consulta SQL en la linea seleccionada
+
+-- Keymaps para todo_comments
+vim.api.nvim_set_keymap('n', ';tc', ':TodoTelescope<CR>', { noremap = true, silent = true }) -- Esto abre Telescope con los comentarios TODO, FIXME, etc

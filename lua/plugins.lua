@@ -21,7 +21,9 @@ return require("packer").startup(function(use)
   use "jackMort/ChatGPT.nvim"
   use "nvim-lua/plenary.nvim"
   use "MunifTanjim/nui.nvim"
-  use "github/copilot.vim"
+  -- NOTE: Intentando instalar copilot lua
+  use { "zbirenbaum/copilot.lua" }
+  -- use "github/copilot.vim"
   use "leafOfTree/vim-matchtag"
   use "sainnhe/gruvbox-material"
   use "morhetz/gruvbox"
@@ -38,6 +40,8 @@ return require("packer").startup(function(use)
   use "folke/which-key.nvim"
   use "folke/trouble.nvim"
   use "nvim-tree/nvim-web-devicons"
+  use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
+  use "folke/zen-mode.nvim"
   use "rcarriga/nvim-notify"
   use "folke/noice.nvim"
   use "tpope/vim-dadbod"
@@ -45,6 +49,11 @@ return require("packer").startup(function(use)
   use "kristijanhusak/vim-dadbod-completion"
   use "KabbAmine/vCoolor.vim"
   use "nvim-telescope/telescope.nvim"
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   use { "nvim-telescope/telescope-live-grep-args.nvim", branch = "master" }
   use { "neoclide/coc.nvim", branch = "release" }
   use { "neoclide/coc-prettier", run = "yarn install --frozen-lockfile" }
